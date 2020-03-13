@@ -1,16 +1,16 @@
 {
-  "name": "linter-gfortran",
-  "displayName": "Modern Fortran",
-  "description": "Modern Fortran language support, including syntax highlighting and error detection.",
-  "version": "2.1.1",
-  "publisher": "krvajalm",
+  "name": "trefor",
+  "displayName": "Trefor",
+  "description": "Trefor language support, the clone of Modern Fortran.",
+  "version": "0.1.1",
+  "publisher": "baklanovp",
   "engines": {
     "vscode": "^1.30.x"
   },
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/krvajalmiguelangel/vscode-fortran-support.git"
+    "url": "https://dev.azure.com/baklanovp/vscode-trefor/_git/vscode-trefor"
   },
   "categories": [
     "Programming Languages",
@@ -18,75 +18,47 @@
     "Linters"
   ],
   "activationEvents": [
-    "onLanguage:FortranFreeForm"
+    "onLanguage:Trefor"
   ],
   "main": "./out/src/extension",
   "contributes": {
     "languages": [
       {
-        "id": "FortranFreeForm",
+        "id": "Trefor",
         "aliases": [
-          "Fortran90",
-          "fortran90"
+          "Trefor",
+          "Trefor90",
+          "trefor90"
         ],
         "extensions": [
-          ".f90",
-          ".F90",
-          ".f95",
-          ".F95",
-          ".f08",
-          ".F08"
-        ],
-        "configuration": "./language-configuration.json"
-      },
-      {
-        "id": "fortran_fixed-form",
-        "aliases": [
-          "Fortran ",
-          "fortran",
-          "FORTRAN77"
-        ],
-        "extensions": [
-          ".f",
-          ".F",
-          ".f77",
-          ".F77",
-          ".for",
-          ".FOR",
-          ".fpp",
-          ".FPP"
+          ".trf"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "FortranFreeForm",
-        "scopeName": "source.fortran.free",
-        "path": "./syntaxes/fortran_free-form.tmLanguage.json"
+        "language": "Trefor",
+        "scopeName": "source.trefor.free",
+        "path": "./syntaxes/trefor_form.tmLanguage.json"
       },
       {
         "scopeName": "source.openmp",
         "path": "./syntaxes/openmp_lang.json",
         "injectTo": [
-          "source.fortran.free"
+          "source.trefor.free"
         ]
-      },
-      {
-        "language": "fortran_fixed-form",
-        "scopeName": "source.fortran.fixed",
-        "path": "./syntaxes/fortran_fixed-form.tmLanguage.json"
       }
     ],
     "snippets": [
       {
-        "language": "FortranFreeForm",
+        "language": "Trefor",
         "path": "./snippets/fortran90.json"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "Fortran configuration",
+      "title": "Trefor configuration",
       "properties": {
         "fortran.includePaths": {
           "type": [

@@ -1,16 +1,9 @@
 {
-	"comment": "Specificities of Fortran >= 90",
-	"name": "Fortran - Free Form",
-	"scopeName": "source.fortran.free",
+	"comment": "Specificities of Trefor",
+	"name": "Trefor",
+	"scopeName": "source.trefor.free",
 	"fileTypes": [
-		"f90",
-		"F90",
-		"f95",
-		"F95",
-		"f03",
-		"F03",
-		"f08",
-		"F08"
+		"trf"
 	],
 	"firstLineMatch": "(?i)-[*]- mode: fortran free -[*]-",
 	"patterns": [
@@ -58,6 +51,9 @@
 		},
 		{
 			"include": "#procedure-definition"
+		}, 
+		{ 
+			"include": "#node-header" 
 		},
 		{
 			"include": "#derived-type-definition"
@@ -862,7 +858,7 @@
 		},
 		"comments": {
 			"name": "comment.line.fortran",
-			"begin": "!",
+			"begin": "--",
 			"end": "(?=\\n)"
 		},
 		"constants": {
@@ -4796,7 +4792,44 @@
 			"end": "(\\])",
 			"endCaptures": {
 				"1": {
+					"name": "punctuation.bracket.right.fortran"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#constants"
+				},
+				{
+					"include": "#operators"
+				},
+				{
+					"include": "#array-constructor"
+				},
+				{
+					"include": "#parentheses"
+				},
+				{
+					"include": "#intrinsic-functions"
+				},
+				{
+					"include": "#variable"
+				}
+			]
+		},
+		"node-header": {
+			"begin": "\\s*(\\<)",
+			"beginCaptures": {
+				"1": {
 					"name": "punctuation.bracket.left.fortran"
+				}
+			},
+			"end": "(\\>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.bracket.right.fortran"
 				}
 			},
 			"patterns": [
