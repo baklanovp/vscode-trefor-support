@@ -1,0 +1,15 @@
+
+# Tool
+
+$  npm install -g vsce
+
+
+# Build
+bakl@eta:~/Sn/Release/fortran_code/vscode-trefor-support$ vsce package
+
+
+# Install
+
+bakl@eta:~/Sn/Release/fortran_code/vscode-trefor-support$ vsce login baklanovp
+
+bakl@eta:~/Sn/Release/fortran_code/vscode-trefor-support$ vsce login baklanovp
